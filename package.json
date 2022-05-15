@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind:watch": "npx tailwindcss -i tailwind.css -o ./assets/bundle.min.css --minify --watch",
     "tailwind:build": "npx tailwindcss -i tailwind.css -o ./assets/bundle.min.css --minify",
-    "shopify:serve": "shopify theme serve",
+    "shopify:serve": "shopify theme serve --theme-editor-sync",
     "start": "npm-run-all -n --parallel tailwind:watch shopify:serve"
   },
   "repository": {

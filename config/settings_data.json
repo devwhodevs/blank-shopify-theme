@@ -1,8 +1,8 @@
 {
-  "current": "Default",
+  "current": {
+  },
   "presets": {
     "Default": {
-      "sections": {}
     }
   }
 }
