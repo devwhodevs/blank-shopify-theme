@@ -1,0 +1,27 @@
+{
+  "name": "blank-shopify-theme",
+  "version": "1.0.0",
+  "description": "Blank Shopify Theme represents a completely blank Shopify Theme Architecture for custom builds. All template files created with [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes. Contains meta-tags snippet for og:* meta tags.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:watch": "npx tailwindcss -i tailwind.css -o ./assets/bundle.min.css --minify --watch",
+    "tailwind:build": "npx tailwindcss -i tailwind.css -o ./assets/bundle.min.css --minify",
+    "shopify:serve": "shopify theme serve",
+    "start": "npm-run-all -n --parallel tailwind:watch shopify:serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devwhodevs/blank-shopify-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devwhodevs/blank-shopify-theme/issues"
+  },
+  "homepage": "https://github.com/devwhodevs/blank-shopify-theme#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.0.24"
+  }
+}
