@@ -2,7 +2,17 @@
 
 Blank Shopify Theme represents a completely blank Shopify Theme Architecture for custom builds. All template files created with [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes. Contains meta-tags snippet for og:* meta tags.
 
+### Continuous Integration
 
+Blank Shopify Theme uses [GitHub Actions](https://github.com/features/actions) to maintain the quality of the theme. [This is a starting point](https://github.com/devwhodevs/blank-shopify-theme/blob/master/.github/workflows/ci.yml) and what we suggest to use in order to ensure you're building better themes. Feel free to build off of it!
+
+#### Shopify/lighthouse-ci-action
+
+We love fast websites! Which is why we created [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action). This runs a series of [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure code that gets added doesn't degrade storefront performance over time.
+
+#### Shopify/theme-check-action
+
+Blank Shopify Theme runs Theme Check on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
 
 ## License
 
