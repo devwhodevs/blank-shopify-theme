@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "index-section"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
