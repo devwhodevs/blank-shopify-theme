@@ -34,8 +34,9 @@
     	{{ customer.first_name }}
     	{{ customer.last_name }}
     {% else %}
-        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' %}
-        {% assign timestamp = 'now' | date: '%Y-%m-%dT%X %Z'%}
+        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' | hmac_sha256 %}
+    	{{ secret }}
+        {% assign timestamp = 'now' | date: '%Y-%m-%dT%X +03:00'%}
 
         {% capture json %}
             {"email": "bavonij396@akapple.com", "first_name": "Bob", "last_name": "Bobsen", "created_at": "{{ timestamp }}"}
