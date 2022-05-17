@@ -36,8 +36,10 @@
 	{% endcapture %}
     {% assign shaed = json | sha256 %}
     {% assign signed = shaed | hmac_sha256: secret %}
-	/account/login/multipass/{{ signed }}
-    
+    <script>
+     
+		window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed }}'
+    </script>
     {% if customer %}
     	{{ customer.email }}
     	{{ customer.first_name }}
