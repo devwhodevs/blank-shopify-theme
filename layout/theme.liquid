@@ -29,7 +29,7 @@
       {{ content_for_layout }}
     </main>
     {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' %}
-    {{ 'now' | date }}
+    {{ 'now' | date: '%Y-%m-%dT%X %Z' }}
     
 
     <script defer src="{{ 'swiper-bundle.8.1.4.min.js' | asset_url }}"></script>
