@@ -35,7 +35,8 @@
     	{{ customer.last_name }}
     {% else %}
         {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' | sha256 %}
-    	{{ secret }}
+    	{{ secret | slice: 0, 16 }}
+    	{{ secret | slice: 16, 16 }}
         {% assign timestamp = 'now' | date: '%Y-%m-%dT%X +03:00'%}
 
         {% capture json %}
