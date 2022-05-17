@@ -28,22 +28,24 @@
     <main role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-    {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' %}
-    {% assign timestamp = 'now' | date: '%Y-%m-%dT%X %Z'%}
-    
-    {% capture json %}
-    	{"email": "bavonij396@akapple.com", "first_name": "Bob", "last_name": "Bobsen", "created_at": "{{ timestamp }}"}
-	{% endcapture %}
-    {% assign shaed = json | sha256 %}
-    {% assign signed = shaed | hmac_sha256: secret %}
-    <script>
-     
-		window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed }}'
-    </script>
+
     {% if customer %}
     	{{ customer.email }}
     	{{ customer.first_name }}
     	{{ customer.last_name }}
+    {% else %}
+        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' %}
+        {% assign timestamp = 'now' | date: '%Y-%m-%dT%X %Z'%}
+
+        {% capture json %}
+            {"email": "bavonij396@akapple.com", "first_name": "Bob", "last_name": "Bobsen", "created_at": "{{ timestamp }}"}
+        {% endcapture %}
+        {% assign shaed = json | sha256 %}
+        {% assign signed = shaed | hmac_sha256: secret %}
+        <script>
+
+            window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed }}'
+        </script>
     {% endif %}
     <script defer src="{{ 'swiper-bundle.8.1.4.min.js' | asset_url }}"></script>
     <script defer src="{{ 'swiper.js' | asset_url }}"></script>
