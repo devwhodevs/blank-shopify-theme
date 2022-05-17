@@ -45,7 +45,7 @@
         {% assign signed = shaed | hmac_sha256: secret %}
         <script>
 
-            window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed | base64_url_safe_encode }}'
+//             window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed | base64_url_safe_encode }}'
         </script>
     {% endif %}
     <script defer src="{{ 'swiper-bundle.8.1.4.min.js' | asset_url }}"></script>
