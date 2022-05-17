@@ -28,27 +28,6 @@
     <main role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
-    {% if customer %}
-    	{{ customer.email }}
-    	{{ customer.first_name }}
-    	{{ customer.last_name }}
-    {% else %}
-        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' | sha256 %}
-    	{{ secret | slice: 0, 16 }}
-    	{{ secret | slice: 16, 16 }}
-        {% assign timestamp = 'now' | date: '%Y-%m-%dT%X +03:00'%}
-
-        {% capture json %}
-            {"email": "bavonij396@akapple.com", "first_name": "Bob", "last_name": "Bobsen", "created_at": "{{ timestamp }}"}
-        {% endcapture %}
-        {% assign shaed = json | sha256 %}
-        {% assign signed = shaed | hmac_sha256: secret %}
-        <script>
-
-//             window.location.href = 'https://devwhodevs.myshopify.com/account/login/multipass/{{ signed | base64_url_safe_encode }}'
-        </script>
-    {% endif %}
     <script defer src="{{ 'swiper-bundle.8.1.4.min.js' | asset_url }}"></script>
     <script defer src="{{ 'swiper.js' | asset_url }}"></script>
     <script defer src="{{ 'main.js' | asset_url }}"></script>
