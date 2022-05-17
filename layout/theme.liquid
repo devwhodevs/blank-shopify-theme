@@ -34,7 +34,7 @@
     	{{ customer.first_name }}
     	{{ customer.last_name }}
     {% else %}
-        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' | hmac_sha256: '7a2af2892bee1dfe3105691cb10fe308' %}
+        {% assign secret = '7a2af2892bee1dfe3105691cb10fe308' | sha256 %}
     	{{ secret }}
         {% assign timestamp = 'now' | date: '%Y-%m-%dT%X +03:00'%}
 
